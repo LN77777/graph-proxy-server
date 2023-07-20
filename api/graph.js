@@ -6,6 +6,7 @@ module.exports = cors((req, res) => {
         .then(response => {
             res.json(response.data);
             res.header('Access-Control-Allow-Origin', 'vercel.app');
+            res.header('Access-Control-Allow-Headers', 'Content-Type');
         })
         .catch(error => {
             console.error(error);
