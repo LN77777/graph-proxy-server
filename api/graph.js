@@ -5,6 +5,7 @@ module.exports = cors((req, res) => {
     axios.post('https://subgraph.satsuma-prod.com/9729d24721a2/realm/realm/api', req.body)
         .then(response => {
             res.json(response.data);
+            res.header('Access-Control-Allow-Origin', 'vercel.app');
         })
         .catch(error => {
             console.error(error);
